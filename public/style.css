@@ -1,0 +1,437 @@
+:root{
+    --text-colour:white;
+    --deep-green: rgb(197, 238, 197);
+    --font:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --padding:7% 7%;
+	--deep-green:rgba(3, 109, 30, 0.486);
+}
+
+
+/* =========================Login===========================*/
+
+.profile-login{
+	font-family: sans-serif;
+	margin:0;
+	line-height: 1.5;
+}
+
+
+
+.login-popup{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1099;
+	background-color:rgba(0,0,0,0.6);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.login-popup.show{
+	visibility:visible;
+	opacity: 1;
+}
+.login-popup .box{
+	background-color:#ffffff;
+	width: 750px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	display: flex;
+	flex-wrap: wrap;
+	opacity: 0;
+	margin-left: 50px;
+	transition: all 1s ease;
+
+}
+.login-popup.show .box{
+	opacity: 1;
+	margin-left: 0;
+}
+.login-popup .box .img-area{
+	flex:0 0 50%;
+	max-width: 50%;
+	position: relative;
+	overflow: hidden;
+	padding:30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login-popup .box .img-area h1{
+	font-size: 30px;
+}
+.login-popup .box .img-area .img{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-image: url('source/depositphotos_46326447-stock-photo-man-with-recycle-trash-can.jpg');
+	background-size: cover;
+	background-position: center;
+	animation: zoomInOut 7s linear infinite;
+	z-index: -1;
+
+}
+@keyframes zoomInOut{
+	0%,100%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+}
+.login-popup .box .form{
+	flex:0 0 50%;
+	max-width: 50%;
+	padding:40px 30px;
+}
+
+.login-popup .box .form h1{
+	color:#000000;
+	font-size: 30px;
+	margin:0 0 30px;
+}
+.login-popup .box .form .form-control{
+	height: 45px;
+	margin-bottom: 30px;
+	width: 100%;
+	border:none;
+	border-bottom:1px solid #cccccc;
+	font-size: 15px;
+	color:#000000;
+}
+.login-popup .box .form .form-control:focus{
+	outline: none;
+}
+.login-popup .box .form label{
+	font-size: 15px;
+	color:#555555;
+}
+.login-popup .box .form .btn{
+	width: 100%;
+	background-color: rgb(44, 221, 103);
+	margin-top:40px;
+	height: 45px;
+	border:none;
+	border-radius: 25px;
+	font-size: 15px;
+	text-transform: uppercase;
+	color:#ffffff;
+	cursor: pointer;
+}
+.login-popup .box .form .btn:focus{
+	outline: none;
+}
+
+.login-popup .box .form .close{
+	position: absolute;
+	right: 10px;
+	top:0px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+	.login-popup .box{
+		width: calc(100% - 30px);
+	}
+	.login-popup .box .img-area{
+		display: none;
+	}
+	.login-popup .box .form{
+		flex: 0 0 100%;
+        max-width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ======================================Header======================================== */
+.home{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('source/home-background.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* margin-right: 0rem; */
+}
+.logo{
+    color:var(--text-colour);
+    display: flex;
+    
+}
+.logo-img{
+    width: 3rem;
+}
+
+.nav-item{
+    padding: 0 2rem;
+}
+.nav-link{
+    color: var(--text-colour) !important;
+}
+.home-login{
+    color:var(--deep-green);
+}
+
+
+.heading{
+    color: var(--text-colour);
+    padding: 7% 0%;
+}
+.heading h1{
+    
+    font-weight: 800;
+    font-size: 7rem;
+    /* font-family:var(--font); */
+    letter-spacing: 0.2rem;
+}
+.heading p{
+    font-size: 1.5rem;
+}
+.heading-image{
+    height: 32rem;
+   margin: 18% 0% 0% 15%;
+}
+
+
+/* ---------------------------------------------------------------- */
+
+
+
+/* =============================================About=========================================== */
+
+.about{
+    color: var(--text-colour);
+    height: 100vh;
+    width: 100vw;
+    background-image: url('source/about.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.about-text{
+    padding-top: 22%;
+}
+.about-text h1{
+    font-size: 5rem;
+}
+.about-img{
+    width: 40rem;
+    padding-top: 2.5rem;
+}
+/* ----------------------------------------------------------------- */
+
+/* ===================================DashBoard===================================== */
+
+.dashboard{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('source/Dash-Board.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+	z-index: -5;
+}
+.dashboard-title{
+	color: var(--text-colour);
+	font-size: 4rem;
+}
+.dashboard-coin-tile{
+	background-color: var(--deep-green);
+	padding: 0.5rem;
+	border-radius: 10px;
+}
+.dashboard-profile-icon{
+	padding-left: 2rem;
+	display: flex;
+}
+.dashboard-profile-icon h2{
+display: inline-block;
+}
+.username{
+	color: black;
+	margin-left: -0.5rem;
+	padding-top: 0.5rem;
+}
+
+.coin-icon{
+	/* border: 2px solid red; */
+	width: 2rem;
+}
+.coin-counter{
+	padding-top: 0.5rem;
+}
+.coins{
+	color: black;
+	margin-left: -1rem;
+	padding-top: 0.5rem;
+}
+
+
+
+
+
+.dashboard-img{
+	position: absolute;
+	margin-top: -22.5rem;
+	/* padding-top: 4rem; */
+	width: 30rem;
+	/* z-index: -1; */
+}
+
+.code-text{
+	color: var(--text-colour);
+	padding-left: 14rem;
+	padding-top: 12rem;
+}
+
+.code-input{
+	position: relative;
+	background-color: transparent;
+	border: none;
+	padding-top: 0.2;
+	font-size: 1.4rem;
+	color: rgb(38, 0, 255);
+	width: 10rem;
+	border-bottom: 2px solid green;
+	z-index: 2;
+}
+
+
+/* =================================================================== */
+.coupons-history-list{
+	background-color: var(--deep-green);
+	padding-top: 1.5rem;
+	border-radius: 10px;
+	height: 20rem;
+	overflow: hidden;
+}
+.coupons-history-list:hover{
+	overflow-y: scroll;
+}
+.coupons-history{
+	padding-top: 2rem;
+	
+}
+.dashboard-coupons{
+	background-color:#63c495b4;
+	margin:1rem 0rem;
+	border: 2px solid rgb(5, 56, 1);
+	/* color: white; */
+	border-radius: 10px;
+}
+.center{
+	text-align: center;
+}
+
+/* ==============================Coupons=================================== */
+
+/* ************************************************************ */
+.coupons{
+	height: 100vh;
+	width: 100vw;
+	background-image: url('source/coupons.png');
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.coupon-head{
+	color: var(--text-colour);
+	font-size: 4rem;
+	margin-bottom: 2rem;
+}
+.coupon-scroll{
+	height: 35rem;
+	border-radius: 10px;
+	background-color: var(--deep-green);
+	overflow-y: scroll;
+}
+
+.card{
+	margin: 2rem auto;
+}
+
+/* **************************************************************** */
+
+/* ==============================Reviews=================================== */
+.reviews{
+	padding-top: 10rem;
+	padding-bottom: 0rem;
+	width: 100vw;
+	height: 105vh;
+	background-image: url('source/testimonials.png');
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.testimonial-items{
+	background-color: rgba(255, 255, 255, 0.103);
+	border-radius: 50px;
+	padding: 5rem;
+	width: 100vw;
+	height: 30rem;
+	color: var(--text-colour);
+	text-align: center;
+}
+.testimonial-items img{
+	border: 5px solid var(--text-colour);
+	width: 10rem;
+	border-radius: 50%;
+}
+.sleeping-man{
+	position: absolute;
+	width: 34rem;
+	right: 10rem;
+	margin-top: -20rem;
+}
+/* ================================================================= */
+/* =============================Geolocation==================================== */
+.location{
+	width: 100vw;
+	height: 100vh;
+	background-image: url('source/home-background.png');
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+	padding-top: 10rem;
+}
+.map-holder{
+	/* margin-top: 5rem; */
+	margin: 0 auto;
+}
+.map{
+	border-radius: 10px;
+	/* margin-top: 5rem; */
+}
+/* ================================================================= */
+
+.colour{
+	color: var(--text-colour);
+}
+
+/* ============================Footer======================== */
+
+.foot{
+	background-color: rgb(65, 196, 156);
+	width: 100vw;
+	height: 50vh;
+	margin-top: -3rem;
+}
+footer{
+	/* background-color: black; */
+}
